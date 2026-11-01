@@ -41,6 +41,23 @@ multi-pass harness asserts the visible result, not just that code ran.
 *Observed / Derived / Inferred / Unknown* split. `re/HANDOFF.md` is the session history.
 `re/loader_map.md` assigns each shipped data file to the routine that opens it.
 
+## Verification
+
+205 assertions, and they run against a checkout rather than my working directory:
+
+| harness | checks | what it pins |
+|---|---|---|
+| `web/tools/integration_check.mjs` | 133 | asset decode, screen flow, states 1-4 running their documented arms, conversation, world flags |
+| `web/tools/bars_check.mjs` | 28 | the engineering bar geometry against the `@0x29bd6` click boxes |
+| `web/tools/panels_check.mjs` | 19 | lamp cells, power gates, ammo strip, the selector tables vs the EXE image |
+| `web/tools/hud_check.mjs` | 25 | HUD destinations, the number formatter, the field clearer, the digit spinners |
+
+`npm --prefix web run check:dist` re-runs the integration suite against the *emitted* JavaScript,
+so a passing `tsc` cannot hide a transcription that only works under Node's type-stripping.
+`tools/verify_dist.mjs` checks the shipped distribution is unmodified.
+
+A fresh `git clone` of this repository passes all 205 and reports `distribution intact`.
+
 ## Not finished
 
 - **The economy is partly mapped.** Fuel, hull, credits and the mission tree come from the state
