@@ -1,0 +1,126 @@
+
+=============================================================================
+SOLAR WINDS  version 2.0             *       Troubleshooting & Hints
+=============================================================================
+
+ABOUT THE GAME:
+
+Solar Winds combines both fast-action arcade excitement with a detailed
+story that develops as you progress through the game!  With 256-color
+VGA graphics and a beautifully-orchestrated musical sound track,  this
+1993 Epic MegaGames release will keep you entertained for many hours
+of play.
+
+In Solar Winds,  you play the role of Jake Stone,  bounty hunter.  As you
+explore the galaxy on various missions,  you'll fend off hostile attackers
+to achieve your goals.  Meanwhile,  a dark and mysterious plot develops
+as you progress.  The nature of the plot won't be fully revealed until you
+solve Solar Winds.
+
+Solar Winds is situated in space and features smooth-scrolling 256-color
+graphics as you navigate around the galaxy.  In addition to using your arcade
+skills, Solar Winds requires quite a bit of strategy to master.
+
+Solar Winds consists of two separate,  unique episodes:
+     1.  The Escape
+     2.  Universe
+
+Requirements:
+     þ  VGA graphics (uses 256 colors)
+     þ  80286 or faster processor
+     þ  512K memory and DOS 3.0 or later
+
+Also supports:
+     þ  Sound Blaster music card -- for great music & digital sound effects
+     þ  Joystick
+     þ  Mouse
+
+=============================================================================
+
+We are Epic MegaGames and we're here to bring you the best in animated games
+for your PC.  Our 30-person team is busy at work to make new products to
+challenge and entertain you.
+
+
+   HINT
+   ====
+
+This game is equipped with a "Save" feature -- so remember to save your game
+often.  Later on,  if your bratty little brother unplugs the computer
+while you are playing,  you won't need to start over!
+
+
+   HOW TO START
+   ============
+
+To go,  just type SOLAR1 from the DOS prompt -- and you're ready to begin.
+
+
+   NOTE TO SOUND BLASTER OWNERS:
+   =============================
+
+Solar Winds sports a musical sound track and digitized sound effects.  If you
+experience trouble (lockups or aborts), try booting from a blank
+floppy disk with no TSR's loaded.  If this doesn't solve the problem, your
+best bet is to TURN OFF THE DIGITAL SOUND EFFECTS.
+
+Sorry, Solar Winds doesn't support the Adlib card.  Only the genuine Sound
+Blaster card.
+
+
+   TROUBLE-SHOOTING
+   ================
+
+First of all,  we recommend NOT running Solar Winds through Microsoft Windows.
+While,  if you are lucky,  Solar Winds may function properly under Windows,
+this is not recommended.  Please run Solar Winds from DOS.
+
+If you're using a disk compression utility like Stacker or SuperStor,  you
+might run into problems running Solar Winds.  If this happens,  please
+install Solar Winds on a non-compressed part of your hard disk.
+
+If Solar Winds locks up when you first run the game, type:
+   SOLAR1 /NOSB  (if you don't have a Sound Blaster)
+
+If Solar Winds is giving you intermittent problems, boot from a blank floppy
+disk with no TSR's in memory.  You might possibly run into problems with:
+   - Memory managers like QEMM
+   - Disk Caches
+   - Any other kind of TSR program
+
+Make sure your FILES= and BUFFERS= lines in CONFIG.SYS are set to at least 25.
+
+
+   MEMBER, ASP
+   ===========
+
+This program is produced by a member of the Association of Shareware
+Professionals (ASP).  ASP wants to make sure that the shareware principal
+works for you.  If you are unable to resolve a shareware-related problem
+with an ASP member by contacting the member directly,  ASP may be able to
+help.  The ASP Ombudsman can help you resolve a dispute with an ASP member,
+but does not provide technical support for members' products.  Please write
+to the ASP Ombudsman at 545 Grover Road,  Muskogeon, MI 49442-9427 or send
+a Compuserve message via CompuServe Mail to ASP Ombudsman 70007,3536.
+
+
+   CALL EPIC'S HOME BBS
+
+Call Exec-PC for all the latest Epic MegaGames releases and
+updates. Sysop:  Bob Mahoney
+
+                414-789-4210 (2400 Baud)
+                414-789-4360 (14.4K Dual HST)
+
+=============================================================================
+
+Thank you for playing Solar Winds,
+
+
+   James Schmalz                               Tim Sweeney
+   Author,                    and              President,
+   Solar Winds                                 Epic MegaGames
+
+
+
+

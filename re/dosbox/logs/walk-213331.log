@@ -1,0 +1,99 @@
+date       time         | 
+2026-10-31 21:33:31.588 | arguments: /Applications/DOSBox\ Staging.app/Contents/MacOS/dosbox --working-dir /Users/unlink/code/solarwinds/re/dosbox --noprimaryconf --conf /Users/unlink/code/solarwinds/re/dosbox/solar.conf --set mapperfile=/Users/unlink/code/solarwinds/re/dosbox/solar.map --set automount=off --exit -c MOUNT\ C\ /Users/unlink/code/solarwinds/re/dosbox/run -c C: -c SOLAR1.EXE
+2026-10-31 21:33:31.588 | Current dir: /Users/unlink/code/solarwinds/re/dosbox
+2026-10-31 21:33:31.588 | stderr verbosity: 0
+2026-10-31 21:33:31.588 | -----------------------------------
+2026-10-31 21:33:31.588 | dosbox-staging version 0.83.0 (7b400)
+2026-10-31 21:33:31.588 | ---
+2026-10-31 21:33:31.588 | Loguru version 2.1.0 initialised
+2026-10-31 21:33:31.592 | CONFIG: Loaded custom config file '/Users/unlink/code/solarwinds/re/dosbox/solar.conf'
+2026-10-31 21:33:31.594 | LOCALE: Using internal English language messages (detected from 'en-US; GUI: en-AU')
+2026-10-31 21:33:31.683 | SDL: Version 2.32.10 initialised
+2026-10-31 21:33:31.683 | SDL: cocoa video initialised
+2026-10-31 21:33:31.796 | VIDEO: Using the DOS video modes' refresh rate
+2026-10-31 21:33:31.797 | DOS: Setting hard disk disk speed to maximum
+2026-10-31 21:33:31.797 | DOS: Setting floppy disk speed to maximum
+2026-10-31 21:33:31.800 | MEMORY: Using 4096 DOS memory pages (16 MB) at address: 0x7990c00000
+2026-10-31 21:33:31.800 | FPU: Using reduced-precision floating-point emulation
+2026-10-31 21:33:31.801 | VIDEO: Initialised S3 Trio64 VESA 2.0 compatible with 4 MB of FP DRAM supporting 89 modes
+2026-10-31 21:33:31.802 | VOODOO: Initialized with 4 MB of RAM, 10 threads, and bilinear filtering
+2026-10-31 21:33:31.803 | CAPTURE: Image capturer started
+2026-10-31 21:33:31.904 | SDL: coreaudio audio initialised
+2026-10-31 21:33:31.904 | MIXER: Initialised stereo 44100 Hz audio with 1024 sample frame buffer
+2026-10-31 21:33:31.904 | MIXER: Reverb disabled
+2026-10-31 21:33:31.904 | MIXER: Master compressor disabled
+2026-10-31 21:33:31.905 | MPU-401: Running in intelligent mode on ports 330h and 331h
+2026-10-31 21:33:32.487 | MIDI: Opened device 'coremidi'
+2026-10-31 21:33:32.488 | OPL: Operating at 49716 Hz and downsampling to the output rate
+2026-10-31 21:33:32.488 | OPL: Noise gate enabled
+2026-10-31 21:33:32.488 | OPL: Running OPL3 on ports 220h and 388h
+2026-10-31 21:33:32.488 | OPL: Sound Blaster 16 OPL output filter enabled
+2026-10-31 21:33:32.488 | DMA: Initialised primary controller
+2026-10-31 21:33:32.488 | DMA: Initialised secondary controller
+2026-10-31 21:33:32.488 | SB: Operating at 22050 Hz and upsampling to the output rate
+2026-10-31 21:33:32.488 | SB16: Modern DAC output filter enabled
+2026-10-31 21:33:32.488 | SB16: Setting 'BLASTER' environment variable to 'A220 I7 D1 H5 T6'
+2026-10-31 21:33:32.488 | SB16: Running on port 220h, IRQ 7, DMA 1, and high DMA 5
+2026-10-31 21:33:32.488 | PCSPEAKER: Operating at 32000 Hz and upsampling to the output rate
+2026-10-31 21:33:32.488 | PCSPEAKER: Initialised impulse model
+2026-10-31 21:33:32.488 | PCSPEAKER: High-pass filter enabled (18 dB/oct at 120 Hz)
+2026-10-31 21:33:32.488 | PCSPEAKER: Low-pass filter enabled (18 dB/oct at 4300 Hz)
+2026-10-31 21:33:32.500 | LOCALE: Country detected from 'en-AU'
+2026-10-31 21:33:32.500 | LOCALE: Loading native locale for country 61 - 'Australia'
+2026-10-31 21:33:32.500 | LOCALE: Using numeric/time/date format detected from host OS
+2026-10-31 21:33:32.501 | LOCALE: Keyboard layout and code page detected from '0 (U.S.)'
+2026-10-31 21:33:32.501 | LOCALE: Loaded keyboard layout 'us' - 'US (standard, QWERTY/national)'
+2026-10-31 21:33:32.502 | DISPLAY: Using 960x600 window size in windowed mode on display-0
+2026-10-31 21:33:32.539 | OPENGL: Version: 4.1, GLSL version: 4.10, vendor: Apple
+2026-10-31 21:33:32.542 | RENDER: Using shader 'interpolation/bilinear'
+2026-10-31 21:33:32.544 | VGA: Double scanning VGA video modes enabled
+2026-10-31 21:33:32.544 | VGA: Pixel doubling enabled
+2026-10-31 21:33:32.544 | RENDER: Auto-switched to P22 CRT color profile
+2026-10-31 21:33:32.544 | RENDER: Auto-switched to 7800K colour temperature
+2026-10-31 21:33:32.544 | MOUSE: Will be captured after the first left or right button click
+2026-10-31 21:33:32.544 | MOUSE: Middle button will capture/release the mouse (clicks not sent to the game/program)
+2026-10-31 21:33:32.544 | RENDER: Deinterlacing disabled
+2026-10-31 21:33:32.544 | RENDER: Dedithering disabled
+2026-10-31 21:33:32.557 | MAPPER: No joysticks found
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '' event
+2026-10-31 21:33:32.558 | MAPPER: Can't find key binding for '#' event
+2026-10-31 21:33:32.558 | MAPPER: Loaded 25 key bindings from '/Users/unlink/code/solarwinds/re/dosbox/solar.map'
+2026-10-31 21:33:32.583 | MOUSE (DOS): Built-in driver is simulating a 2 buttons model
+2026-10-31 21:33:32.588 | RENDER: Auto-switched to P22 CRT color profile
+2026-10-31 21:33:32.588 | RENDER: Auto-switched to 7800K colour temperature
+2026-10-31 21:33:32.594 | DISPLAY: VGA 720x400 16-colour text mode 03h at 70.087 Hz, scaled to 1920x1067 pixels with 1:1 (1:1) pixel aspect ratio
+2026-10-31 21:33:32.594 | DISPLAY: Presenting at DOS rate without vsync
+2026-10-31 21:33:32.619 | DISPLAY: VGA 320x200 256-colour graphics mode 13h at 70.086 Hz, scaled to 1920x1200 pixels with 1:1 (1:1) pixel aspect ratio
+2026-10-31 21:33:32.636 | DISPLAY: VGA 320x200 256-colour graphics mode 13h at 70.086 Hz, scaled to 1410x881 pixels with 1:1 (1:1) pixel aspect ratio
+2026-10-31 21:33:38.359 | CAPTURE: Capturing raw image to '/Users/unlink/code/solarwinds/re/dosbox/captures/image0004-raw.png'
+2026-10-31 21:33:46.562 | CAPTURE: Capturing raw image to '/Users/unlink/code/solarwinds/re/dosbox/captures/image0005-raw.png'
+2026-10-31 21:33:52.825 | CAPTURE: Capturing raw image to '/Users/unlink/code/solarwinds/re/dosbox/captures/image0006-raw.png'
+2026-10-31 21:33:59.574 | CAPTURE: Capturing raw image to '/Users/unlink/code/solarwinds/re/dosbox/captures/image0007-raw.png'
+2026-10-31 21:34:05.554 | PCSPEAKER: Shutting down impulse model
+2026-10-31 21:34:05.554 | OPL: Shutting down OPL3
+2026-10-31 21:34:05.554 | SB16: Shutting down
+2026-10-31 21:34:05.555 | MPU-401: Shutting down
+2026-10-31 21:34:05.637 | CAPTURE: Image capturer shutting down
+2026-10-31 21:34:05.637 | DMA: Shutting down primary controller
+2026-10-31 21:34:05.637 | DMA: Shutting down secondary controller
+2026-10-31 21:34:05.645 | atexit
+[gtimeout] 34s limit reached; terminated child 26976

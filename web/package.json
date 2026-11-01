@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.3"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "check": "cd .. && node web/tools/integration_check.mjs",
+    "check:dist": "cd .. && node web/tools/check_dist.mjs",
+    "check:browser": "node tools/browser_smoke.mjs 400 Enter Space c"
+  }
+}

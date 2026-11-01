@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solar Winds — web port (engine, from SOLAR1.EXE)</title>
+<style>
+  body { background:#111; color:#bbb; font:12px/1.5 ui-monospace, "SF Mono", Menlo, monospace;
+         display:flex; flex-direction:column; align-items:center; margin:2rem; }
+  canvas { width:640px; height:400px; image-rendering:pixelated; image-rendering:crisp-edges;
+           border:1px solid #333; background:#000; }
+  #status { margin-top:.6rem; color:#7d7; max-width:640px; }
+  h1 { font-size:14px; color:#eee; font-weight:normal; margin:0 0 .8rem; }
+  .keys { color:#666; margin-top:.5rem; max-width:640px; text-align:center; }
+  kbd { color:#aaa; border:1px solid #333; border-radius:3px; padding:0 4px; }
+</style>
+</head>
+<body>
+<h1>SOLAR WINDS &mdash; 320&times;200 mode 13h, decoded from the original .DAT files</h1>
+<canvas id="screen" width="320" height="200"></canvas>
+<div id="status">booting&hellip;</div>
+<div class="keys">
+  <kbd>Arrows</kbd> fly &nbsp; <kbd>S</kbd> scan &nbsp; <kbd>C</kbd> communicate &nbsp;
+  <kbd>A</kbd><kbd>W</kbd><kbd>E</kbd> cargo/weapons/engineering &nbsp;
+  <kbd>F1</kbd>/<kbd>Esc</kbd> disk menu &nbsp; conversation choices: <kbd>1</kbd>&ndash;<kbd>9</kbd>
+  &nbsp; <a href="?gallery=1" style="color:#696">gallery</a>
+</div>
+<script type="module" src="./dist/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# solar.map — DOSBox Staging 0.83.0 mapper overrides for the Solar Winds capture
+# harness. Action names are `<group>_<name>`; the capture group is `hand_` and the
+# names come from the binary's own button table (scrshot, rawshot, upscshot,
+# rendshot, recwave). Modifier encoding: mod1=Ctrl, mod2=Alt, mod3=Shift.
+#
+# SDL2 scancodes used: 63=F6, 64=F7, 68=F11, 69=F12.
+#
+# WHY THIS FILE IS EXPLICIT RATHER THAN "defaults + 2 lines":
+# when a custom mapperfile is loaded, DOSBox logs only
+#   MAPPER: Loaded N key bindings from '<file>'
+# and does *not* log "Loaded default key bindings"; a run with a 2-line file
+# produced no capture on Ctrl+F6. Every binding this harness needs is therefore
+# stated here, and F7/F11 are belt-and-braces alternates for the same action in
+# case a macOS system shortcut eats one of the injected function keys.
+
+# The "default" screenshot: honours [capture] default_image_capture_formats.
+hand_scrshot "key 63 mod1"
+hand_scrshot "key 68"
+
+# Raw framebuffer dump (square 320x200, no shader/upscale) -- the artifact the
+# picture-format lanes want to diff against their RLE decoders.
+hand_rawshot "key 64"
+
+# Audio (WAV) capture start/stop.
+hand_recwave "key 69"

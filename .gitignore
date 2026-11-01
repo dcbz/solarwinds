@@ -1,0 +1,22 @@
+# dependencies and build output.
+# Regenerate web/dist with: npm --prefix web ci && npm --prefix web run build
+node_modules/
+web/dist/
+
+# Machine-generated reverse-engineering corpus, reproducible from SOLAR1.EXE.
+# Keep the helper scripts; re/make_corpus.sh explains what depends on what.
+re/decomp/
+re/work/*
+!re/work/x86.py
+!re/work/bytesearch.py
+!re/work/corpus_map.py
+!re/work/pfun.sh
+!re/work/rea.sh
+
+# The emulator's scratch working copy of the distribution (a third copy of every asset).
+re/dosbox/run/
+
+# Local tooling state.
+.nodeterm/
+.DS_Store
+*.log
