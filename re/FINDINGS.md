@@ -402,3 +402,60 @@ message blit `0x32de` and the rebuild `0x458`), `FUN_231e_4dc7 @0x27fa7`, `FUN_2
 `FUN_231e_bdc8 @0x2efa8`. Disassembly of all six is on disk in `re/work/FUN_231e_*.asm`.
 
 Suite now 205 checks: 133 integration + 28 bars + 19 panels + 25 hud, tsc strict clean, src and dist.
+
+## FUN_231e_4673 @0x27853 — the sensor display, and the game erases sprites with a colour sentinel (2026-11-01)
+
+The most structurally important find so far, from the "remaining pump-side callees" sweep.
+Gated `mode == 1 && [0x3ade] == 1` (@0x27859/@0x27860). Four parts:
+
+**1. Tracking pick (@0x27867..@0x27890).** Walk `DS:[0x3bf3]` entries of the actor-address table at
+`DS:[0x3bf5]`. If the current target `[0x3ae1]` is still on the list, keep it — even if it is not
+trackable. Otherwise adopt the **last** entry whose class byte `[actor+0xb] < 5`, or 0. This is the
+same `class < 5` rule the `d` key uses (@0x2e9ad), and it explains why `d` appears to do nothing while
+the current target is on screen.
+
+**2. Readout box (@0x27894..@0x278c9).** `[0x3ae3]` is last pass's target; on change, paint
+**0x43 × 0x35 = 67 wide by 53 rows** at `A000:0x4b0` (col 240, row 3) with **0x8f**, or **0xde** when
+there is no target at all (@0x278ae). Row advance `add di,0xfd` @0x278c0 (67+253=320). Then
+`FUN_231e_789a @0x2aa7a` draws into it.
+
+**3. The renderer's actual sprite-erasing model (@0x27950..@0x27aa7).** There is no background blit
+per frame. `ES = [0x6b9f]` (the persistent page), and `xor byte [0x3d34],3` @0x2795c flips a one-of-two
+**sentinel** value every pass. Per actor, the engine writes that sentinel into the *page* cell
+(@0x27a6c), then points ES at 0xa000 and looks at the *screen* cell: if it already holds 0x42 'B' or
+0x89 the cell is contested, so it stamps 0xde into the page instead (@0x27a75..@0x27a9d); otherwise it
+writes the **symbol into the screen** (@0x27a81) and pushes the cell onto the draw list `[0x4063]`. At
+the start of the next pass it walks the erase list `[0x41f3]` and clears to 0xde, **in both the page and
+A000** (@0x2797e..@0x27987), every cell still carrying the current sentinel value. So "was this pixel
+mine?" is answered by a colour, and the page buffer is the bookkeeping.
+
+**4. Cell addressing (@0x279b1..@0x27a8b).** `di` walks `[0x3ecd]` entries of `[0x3ecf]`; `bx = actor+6`,
+so position is `actor[6..9]` and the symbol selector is `actor[0xa]`. Delta against the camera high words
+(`[0x3ce]/[0x3d0]` x, `[0x3cf]/[0x3d1]` y) is window-tested signed `+-0x800` by `cmp ax,0x800/jg` +
+`cmp ax,0xf800/jl` (edges inclusive), and the cell is
+`[0x6bb1] + ((dx+0x800)>>6) + ((dy+0x600)>>6)*0x140` — **65 columns by 49 rows**, one byte per cell on a
+320 pitch, so the grid is ordinary frame space, not a separate buffer: the same SI indexes the page
+and A000. Symbols: `type >= 0xc8` -> 0x33 '3' and the actor is pushed onto the visible list
+(`[0x3c1a]`/`[0x3c1c]`), except `0xff` which keeps 0x2b '+' and is *not* listed; `type < 0xc8` -> 0x82
+for 0x17/0x18/0x1b, 0x46 'F' for 0x0c..0x12, else 0x12 (@0x27a2c..@0x27a67).
+
+**Open, and it needs the emulator rather than more reading — `TODO_SWEEP_PHASE`:** taken literally, the
+sentinel written during a pass is the *opposite* value from the one the next pass's sweep compares
+against, and the sweep's list is rebuilt from that same pass's draws (@0x2798c/@0x27995/@0x279b1). On
+that reading a departed blip is never recognised as stale — which is plainly not what the shipped game
+does. Either the `xor` lands somewhere unmodelled or the two lists are not the pair I think. Resolve by
+observation: fly away from an actor under DOSBox and count the frames its symbol survives. `sensor.ts`
+implements the byte order as written and is **deliberately not wired into `main.ts`** until that is
+answered, because wiring it would paint a guessed erase cadence into the running game. The path that
+*is* proven — the full box repaint on target change (@0x27894) — is what currently keeps the readout
+correct.
+
+Also open: `TODO_GRID_ORIGIN` (the image initializes DS:0x6bb1 = 0x730 at file 0x7b41 while the
+pseudocode renders the base as +0x1cdf) and `TODO_SENSOR_RENDER` (FUN_231e_789a @0x2aa7a resamples the
+grid into the 67x53 box at six read sites @0x2aaa9..@0x2ab28; its half-resolution walk is transcribed,
+the byte->pixel table it indexes is not confirmed).
+
+Port: `web/src/engine/sensor.ts` + `web/tools/sensor_check.mjs` (24 checks: the whole symbol table
+including the 0xff exception, the inclusive window edges, the 65x49 geometry, the box fill/empty
+colours, the three pick cases, the contested path, the list rotation, and both mode gates).
+Suite now 229: 133 + 28 + 19 + 25 + 24, tsc strict clean, src and dist.

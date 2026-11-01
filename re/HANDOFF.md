@@ -609,3 +609,16 @@ Suite: `tsc` strict clean, 133/133 src and dist, `web/tools/bars_check.mjs` 25 c
 - The general lesson for every remaining in-place animator: transcribe the mutation, then decide where
   its accumulation lives, because the port re-composites. Verify with a multi-pass sample, not one frame.
 - Next: FUN_231e_4673 @0x27853 (tracking-actor pick + draw at 0x4b0), then 0x5e5e's pattern producer.
+
+## Session 21 — the sensor display and the sentinel-erase renderer model, 229 checks
+- `web/src/engine/sensor.ts`: FUN_231e_4673 @0x27853 transcribed (tracking pick, 67x53 box at A000:0x4b0,
+  the 65x49 cell grid, the symbol table, the sentinel stamp/sweep). `sensor_check.mjs` adds 24 checks.
+- **Key mechanism:** sprites are not erased by a background blit. The engine stamps a sentinel value
+  (`xor byte [0x3d34],3` @0x2795c) into the *page* buffer, draws the symbol into A000, and next pass
+  clears every cell that still carries the sentinel — in the page and on the screen. `world.ts`'s
+  `freshFrame` is working around this without having named it.
+- **`sensor.ts` is intentionally NOT wired into `main.ts`.** See `TODO_SWEEP_PHASE` in FINDINGS: the
+  erase cadence reads as never-matching, so wiring it would bake a guess into the game. Answer it with
+  a DOSBox observation (fly away from an actor, count surviving frames) before connecting it.
+- Next: resolve TODO_SWEEP_PHASE by runtime capture; then FUN_231e_789a @0x2aa7a's grid->box resample;
+  then the 0x5e5e pattern producer. `re/work/FUN_231e_*.asm` has the other four unexamined callees.
